@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment2</title>
+  </head>
+  <body>
+    <h1>USER INFORMATION</h1>
+    <form action="">
+      <div>
+        <label for="firstname"></label>
+        <input type="text" name="firstname" placeholder="enter your firstname" />
+      </div>
+      <div>
+        <label for="lastname"></label>
+        <input type="text" name="lastname"  placeholder="enter your lastname"/>
+      </div>
+      <div>
+        <label for="address"></label>
+        <input type="text" name="address" placeholder="enter your address"/>
+      </div>
+      <div>
+        <label for="email"></label>
+        <input type="email" name="emailId" placeholder="enter your emailid"/>
+      </div>
+      <div>
+        <label for="date"></label>
+        <input type="date" name="dob" placeholder="enter your dob"/>
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+   
+    
+    </form>
+
+    
+
+    <section>
+       
+        <audio controls >   <!--autoplay -->
+            <source src="./song1.mp3" type="audio/mpeg">
+        </audio>
+    </section>
+
+    <section>
+       
+        <video width="320" height="240" autoplay loop>
+            <source src="./video1.mp4" type="video/mp4">
+            Your browser doesent support video tag
+        </video>
+    
+    </section>
+    <section>
+        <svg id="svg1">
+            <circle id="greencircle" cx="30", cy="30" r="30" fill="green"/>
+    
+        </svg>
+    </section>
+
+
+    <section id="data-section"></section>
+        <p id="firstname"></p>
+        <p id="lastname"></p>
+        <p id="dateofbirth"></p>
+    <script>
+      if (typeof Storage) {
+        //store the data
+        localStorage.setItem("firstname", "david");
+        localStorage.setItem("lastname", "oshea");
+        localStorage.setItem("dateofbirth", "01/01/1987");
+       
+       
+        document.getElementById("firstname").innerHTML = localStorage.getItem("firstname");
+        document.getElementById("lastname").innerHTML = localStorage.getItem("lastname");
+        document.getElementById("dateofbirth").innerHTML = localStorage.getItem("dateofbirth");
+      } else {
+        document.getElementById("data-section").innerHTML =
+          " no browser support";
+      }
+    </script>
+  </body>
+</html>
